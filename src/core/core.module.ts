@@ -3,7 +3,7 @@ import { Global, MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { APP_INTERCEPTOR } from '@nestjs/core';
 import * as redisStore from 'cache-manager-redis-store';
-import { DatabaseService } from 'src/database/database.service';
+import { DatabaseService } from '../database/database.service';
 import config from '../config';
 import { TransformResponseInterceptor } from './interceptors/transform-response.interceptor';
 import { LoggerService } from './logger/logger.service';

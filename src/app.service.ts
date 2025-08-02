@@ -16,9 +16,8 @@ export class AppService {
   async getHello() {
     this.logger.log('calling log', 'App Service', { user: 123 });
     const users = await this.databaseService.user.findMany();
-    await this.cacheService.set('users', users, 1000);
-    console.log(await this.cacheService.get('users'));
-
-    return 'Hello World!';
+    await this.cacheService.set('users', users);
+    const cacheValue = await this.cacheService.get('users');
+    return cacheValue;
   }
 }
