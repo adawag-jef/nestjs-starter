@@ -22,4 +22,4 @@ jobs:
       - name: Deploy to Railway
         run: railway up --service=nestjs-starter
         env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          RAILWAY_TOKEN: 2d73a7db-a90e-4eaf-b5c5-d3e8a2554d79
