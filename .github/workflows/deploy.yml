@@ -20,4 +20,6 @@ jobs:
       - name: Install Railway CLI
         run: npm add --global @railway/cli
       - name: Deploy to Railway
-        run: RAILWAY_TOKEN=2d73a7db-a90e-4eaf-b5c5-d3e8a2554d79 railway up --service=nestjs-starter
+        run: railway up --service="nestjs-starter"
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
