@@ -9,6 +9,8 @@ async function bootstrap() {
   app.useLogger(app.get(LoggerService));
   app.use(helmet());
   app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
-  await app.listen(process.env.PORT ?? 3000);
+  const port = process.env.PORT ? parseInt(process.env.PORT) : 3000;
+  const host = '0.0.0.0';
+  await app.listen(port, host);
 }
 bootstrap();
