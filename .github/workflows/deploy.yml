@@ -19,6 +19,8 @@ jobs:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
       - name: Install Railway CLI
         run: pnpm add --global @railway/cli
+      - name: Allow Railway to run scripts
+        run : pnpm approve-builds -g
       - name: Deploy to Railway
         run: railway up --service="nestjs-starter"
         env:
